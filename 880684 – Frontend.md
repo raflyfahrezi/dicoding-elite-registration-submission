@@ -162,4 +162,10 @@ Begitu pula dengan struktur file yang lain jadikan menjadi pecahan - pecahan kec
 
   Cek kembali deskripsi error dan perbaiki kesalahan pada web maupun test scenario.
 
-### Web Performance
+### UI
+
+<img width="278" alt="image" src="https://user-images.githubusercontent.com/33690126/218365960-2477e194-bc93-4440-b0de-8dd8980bb63e.png">
+
+<img width="238" alt="image" src="https://user-images.githubusercontent.com/33690126/218366007-9c910c11-739e-40fd-8934-cadecd5e97a1.png">
+
+
