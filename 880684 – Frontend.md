@@ -10,10 +10,10 @@ Farhan Rafly Fahrezi Saepulloh (raflyfahr15@gmail.com) – Code Reviewer
 ## Summary
 
 - API gagal dipanggil karena kesalahan dalam penulisan endpoint API sehingga endpoint yang dipanggil mengirimkan status code 404.
-
 - Perhatikan penggunaan git ignore, ketika kamu bermain dengan git repository ada beberapa hal yang sebaiknya tidak perlu di up/push ke dalam repository agar kode yang ada dalam repository menjadi efisien dan tidak terdapat hal yang tidak diperlukan. Beberapa contoh folder dan file yang tidak perlu di masukkan kedalam repository yaitu `dist` yang memiliki hasil build, `e2e` atau folder testing lainnya, `.lock` file dan lainnya.
 - Manfaatkan penggunaan git dengan baik dengan melakukan versioning yang jelas. Sehingga ketika ada perubahan code, tidak perlu menyimpannya dengan mengkomentari kode yang lama, hapus saja. Jika memang dibutuhkan kembali tracing melalui commit sebelumnya.
 - Pecah kode menjadi beberapa bagian sesuai fungsi dan perannya agar tidak menumpuk pada 1 file. Selain itu, pendekatan yang biasa disebut atomic ini membuat kita lebih mudah melakukan maintenance karena setiap kode terpisah dan memiliki tempatnya masing - masing sehingga kita tidak begitu kesulitan untuk mencari kode yang salah atau ingin diperbaiki.
+- Pemanfaatan `try catch` ketika melakukan fetching data agar dapat menghandle error ketika fetching data tersebut gagal dilakukan.
 
 ## Code Review
 
@@ -66,6 +66,34 @@ import '../styles/index.css'
 Begitu pula dengan struktur file yang lain jadikan menjadi pecahan - pecahan kecil jika memungkinkan dan buatlah 1 import untuk menjadi gerbang pada scope folder tersebut. Selebihnya sudah baik.
 
 ### Writing Code
+
+- Manfaatkan penggunaan `try catch` dalam mengkonsumsi data dari pihak ketiga. Contohnya seperti ketika melakukan fetching data dari API menggunakan promise.
+
+  ```javascript
+  // src/scripts/data/restaurantdb-source.js
+
+  const response = await fetch(API_ENDPOINT.LIST)
+  ```
+
+  Anda bisa optimalkan data fetching disini dengan menggunakan `catch`, hal tersebut bermanfaat untuk melakukan error handling ketika proses fetching data yang dilakukan itu gagal. Sehingga ketika `catch` diimplementasikan akan terlihat seperti ini,
+
+  ```javascript
+  const response = await fetch(API_ENDPOINT.LIST).catch(() => {
+    return {
+      // return something to avoid error
+    }
+  })
+  ```
+
+  Atau juga bisa seperti ini,
+
+  ```javascript
+  try {
+    const response = await fetch(API_ENDPOINT.LIST)
+  } catch (error) {
+    // do something when error
+  }
+  ```
 
 - Hapus penggunaan lines of code yang tidak perlu, gunakan komentar untuk penggunaan petunjuk jangan untuk mendokumentasikan kode lama. Contoh,
 
