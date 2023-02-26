@@ -193,6 +193,12 @@ Begitu pula dengan struktur file yang lain jadikan menjadi pecahan - pecahan kec
 
 Secara overall UI masih nyaman untuk dilihat namun ketika dilakukan pengecilan layar, app ini masih belum sempurna. Contohnya jika dikecilkan navigasinya tidak memiliki behavior seperti yang seharusnya. Ketika tombol pada navigasi sudah tidak muat jadikan hamburger button saja.
 
+![image](https://user-images.githubusercontent.com/33690126/221389779-65a57002-05a7-423e-ae2d-2565cf472477.png)
+
+![image](https://user-images.githubusercontent.com/33690126/221390276-f02ed24b-acc7-45ef-a489-b5a586bee58e.png)
+
+![image](https://user-images.githubusercontent.com/33690126/221390294-9cdce067-858a-4513-bcf7-ef59296934ba.png)
+
 <p align=center>
 <img width="278" alt="image" src="https://user-images.githubusercontent.com/33690126/218365960-2477e194-bc93-4440-b0de-8dd8980bb63e.png">
 </p>
